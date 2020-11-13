@@ -32,5 +32,4 @@ public class ControllerMenu {
         System.out.println(s);
         return s;
     }
-
 }
