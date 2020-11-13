@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--mapper的命名空间: 规定指定mybatis的映射xml文件-->
+<mapper namespace="com.hellomybody.hmb.dao.DaoUserInfo">
+    <!--    实现方法-->
+    <!--    用户登录查询 用户名和密码 以及开启状态-->
+    <select id="getUserInfoMassage" resultType="com.hellomybody.hmb.bean.UserInfo">  <!--  resultType 为回的方法  -->
+        SELECT * FROM userinfo WHERE
+        username=#{username}
+    </select>
+
+    <!--    更新操作-->
+    <update id="updateUserInfo">
+        UPDATE userinfo SET sex=#{sex} WHERE username = #{username}
+    </update>
+<!--    username;-->
+<!--    sex;-->
+<!--    birthday;-->
+<!--    height;-->
+<!--    weight;-->
+<!--    target;-->
+    <insert id="addUserInfo">
+        INSERT INTO userinfo (sex,birthdayd,height,weight,target) VALUE (#{sex},#{birthday},#{height},#{weight},#{target})
+    </insert>
+</mapper>

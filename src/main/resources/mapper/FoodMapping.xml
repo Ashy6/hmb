@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--mapper的命名空间: 规定指定mybatis的映射xml文件-->
+<mapper namespace="com.hellomybody.hmb.dao.DaoFood">
+    <!--    查询食品的卡路里 -->
+    <!--      结合了模糊查询和IN查询-->
+    <!--    食品列表查询            模糊查询name alias   -->
+    <!--    mysql的分页公式：limit #{第几页},{最大页}-->
+    <select id="getAllFood" resultType="com.hellomybody.hmb.bean.Food">
+        SELECT * FROM food
+        <if test="name !=null">
+            WHERE name like #{name}
+        </if>
+        LIMIT #{pageStarts},#{pageSizes}
+    </select>
+    <select id="getaliasFood" resultType="com.hellomybody.hmb.bean.Food">
+        SELECT * FROM food WHERE concat('name','alias') like #{name}
+    </select>
+    <!--    查询用户数量-->
+    <select id="getFoodCounts" resultType="java.lang.Integer">
+        SELECT count(*) FROM `food`
+        <if test="name !=null ">
+            WHERE name like #{name}
+        </if>
+    </select>
+
+
+</mapper>

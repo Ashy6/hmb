@@ -1,0 +1,17 @@
+# mysql
+spring:
+  datasource:
+    #MySQL配置
+    driverClassName: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/hmb?useUnicode=true&characterEncoding=utf-8&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=GMT
+    username: root
+    password: 3721
+
+mybatis:
+  #配置mybatis的映射文件
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.example.demo.model
+
+server:
+  #服务端口
+  port: 9000
