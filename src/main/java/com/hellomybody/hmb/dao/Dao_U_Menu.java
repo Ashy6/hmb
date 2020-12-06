@@ -2,7 +2,6 @@ package com.hellomybody.hmb.dao;
 
         import com.hellomybody.hmb.bean.M_User;
         import org.springframework.stereotype.Repository;
-
         import java.util.List;
 //为用户menu创建接口dao层
 @Repository

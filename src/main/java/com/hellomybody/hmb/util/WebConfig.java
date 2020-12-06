@@ -21,7 +21,5 @@ public class WebConfig extends WebMvcConfigurerAdapter {
                 .allowCredentials(true)
 //                设置最大响应时间
                 .maxAge(3600);
-
-
     }
 }
