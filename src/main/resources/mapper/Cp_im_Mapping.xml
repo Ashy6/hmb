@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--mapper的命名空间: 规定指定mybatis的映射xml文件-->
+<!--        mybatis中dao接口与mapper配置文件在做映射绑定-->
+<mapper namespace="com.hellomybody.hmb.dao.Dao_cp_immunity">
+    <!--    增加-->
+    <insert id="addMyl">
+        INSERT INTO z_immunity
+        (name,q1,q2,q3,q4,q5,q6,q7,q8,q9,q10,q11,q12,q13)
+        VALUE
+        (#{name},#{q1},#{q2},#{q3},#{q4},#{q5},#{q6},#{q7},#{q8},#{q9},#{q10},#{q11},#{q12},#{q13})
+    </insert>
+</mapper>
