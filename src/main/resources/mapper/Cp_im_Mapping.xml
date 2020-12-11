@@ -7,8 +7,8 @@
     <!--    增加-->
     <insert id="addMyl">
         INSERT INTO z_immunity
-        (name,q1,q2,q3,q4,q5,q6,q7,q8,q9,q10,q11,q12,q13)
+        (name,type1,type2,type3,type4,resource5,type6,resource7,resource8,resource9,resource10,resource11,resource12,type13)
         VALUE
-        (#{name},#{q1},#{q2},#{q3},#{q4},#{q5},#{q6},#{q7},#{q8},#{q9},#{q10},#{q11},#{q12},#{q13})
+        (#{name},#{type1},#{type2},#{type3},#{type4},#{resource5},#{type6},#{resource7},#{resource8},#{resource9},#{resource10},#{resource11},#{resource12},#{type13})
     </insert>
 </mapper>

@@ -49,11 +49,26 @@ public class ControllerUser {
 //    增加的方法     添加用户
     @RequestMapping("/addUser")
     public String addUser(@RequestBody User user){
-        user.setRole("普通用户");
-        user.setState(true);
-        int i = duser.addUser(user);
-        return i >0?"success":"error";
+        User u = duser.getUserMassage(user.getUsername());
+        //       创建map存放查询出的user和flag，转化json字符串，使用JSON.toJSONString转化对象为json
+        HashMap<String,Object> res = new HashMap<>();//        初始信息 flag
+        String flag = "yes";
+        if (u!=null){
+            flag = "no";  //如果不为空，则不可以注册，则先赋值ok
+//        在res中添加信息 flag 和 user-
+            res.put("flag",flag);
+            res.put("user",user);
+//        json字符串，可以转换对象的信息为字符信息
+        String res_json = JSON.toJSONString(res);
+        return res_json;
+        }else {
+            user.setRole("普通用户");
+            user.setState(true);
+            int i = duser.addUser(user);
+            return i > 0 ? "success" : "error";
+        }
     }
+
 //    删除的方法
     @RequestMapping("/deleteUser")
     public String deleteUser(int id){

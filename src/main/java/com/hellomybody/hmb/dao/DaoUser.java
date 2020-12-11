@@ -20,6 +20,7 @@ public interface DaoUser {
     public int updateState(Integer id,Boolean state);
 //    添加功能
     public int addUser(User user);
+    public User getUserMassage(@Param("username") String username);
 //    删除
     public int deleteUser(int id);
 //    修改用户

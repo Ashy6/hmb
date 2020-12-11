@@ -29,7 +29,7 @@ public class ControllerMenu {
         }
 //        json转换字符信息
         String s = JSON.toJSONString(data);
-        System.out.println(s);
+//        System.out.println(s);
         return s;
     }
 }

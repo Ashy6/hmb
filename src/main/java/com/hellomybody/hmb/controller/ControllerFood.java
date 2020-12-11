@@ -24,14 +24,14 @@ public class ControllerFood {
         int pageStart = (queryInfo.getPageNum() - 1) *queryInfo.getPageSize();
 
 //        列表信息  存放到 list 中         "%"+queryInfo.getQuery()+"%"  为获取的查询方法
-        List<Food> foods = df.getAllFood( "%" + queryInfo.getQuery() + "%",pageStart,queryInfo.getPageSize());
+        List<Food> foods = df.getAllFood( "%" + queryInfo.getQuery() + "%","%" + queryInfo.getQuery() + "%",pageStart,queryInfo.getPageSize());
         /*   创建hashmap  用于存放结果 */
         HashMap<String,Object> res = new HashMap<>();
         res.put("num",foodCounts);         //最大页
         res.put("data",foods);              //结果
 //        创建json对象，将string类型的结果转码为json
         String res_js = JSON.toJSONString(res);
-        System.out.println(res);
+//        System.out.println(res);
         return res_js;
     }
 

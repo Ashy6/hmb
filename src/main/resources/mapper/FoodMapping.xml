@@ -15,7 +15,7 @@
         LIMIT #{pageStarts},#{pageSizes}
     </select>
     <select id="getaliasFood" resultType="com.hellomybody.hmb.bean.Food">
-        SELECT * FROM food WHERE concat('name','alias') like #{name}
+        SELECT * FROM food WHERE concat('name','alias') like (#{name},#{alias})
     </select>
     <!--    查询用户数量-->
     <select id="getFoodCounts" resultType="java.lang.Integer">

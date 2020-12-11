@@ -9,6 +9,11 @@
         SELECT * FROM user WHERE
         username=#{username} AND password=#{password} AND state = 1
     </select>
+<!--    此处进行注册验证-->
+    <select id="getUserMassage" resultType="com.hellomybody.hmb.bean.User">  <!--  resultType 为回的方法  -->
+        SELECT * FROM user WHERE
+        username=#{username}
+    </select>
 
 <!--      结合了模糊查询和IN查询-->
 <!--    用户列表查询            模糊查询username   -->
