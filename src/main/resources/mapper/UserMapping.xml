@@ -9,7 +9,7 @@
         SELECT * FROM user WHERE
         username=#{username} AND password=#{password} AND state = 1
     </select>
-<!--    此处进行注册验证-->
+<!--    此处进行注册验证 -  验证是否已注册-->
     <select id="getUserMassage" resultType="com.hellomybody.hmb.bean.User">  <!--  resultType 为回的方法  -->
         SELECT * FROM user WHERE
         username=#{username}
