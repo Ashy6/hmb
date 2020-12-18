@@ -7,5 +7,5 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface Dao_cp_immunity {
 //    添加
-     public int addMyl(Cp_immunity im);
+     public int addMyl(Cp_immunity z_immunity);
 }
