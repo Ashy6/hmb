@@ -28,7 +28,7 @@ public class Controller_cp_immunity {
     public String addIm(@RequestBody Cp_immunity z_immunity){
 //    public void name(@RequestParam("/addIm") Cp_immunity z_immunity) {
         System.out.println(z_immunity);
-//        z_immunity.setName("baba");
+        z_immunity.setEvent("免疫力测试");
         int i = dim.addMyl(z_immunity);
         String str = i >0?"success":"error";
         return str;
