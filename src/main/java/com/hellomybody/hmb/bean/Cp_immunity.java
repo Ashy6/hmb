@@ -20,11 +20,12 @@ public class Cp_immunity {
     private String type13;
     private String timesss;
     private String event;
+    private String score;
     public Cp_immunity() {
     }
     //    完成初始化（创建一个没有id主键的构造）
 
-    public Cp_immunity(String name, String type1, String type2, String type3, String type4, String resource5, String type6, String resource7, String resource8, String resource9, String resource10, String resource11, String resource12, String type13, String timesss, String event) {
+    public Cp_immunity(String name, String type1, String type2, String type3, String type4, String resource5, String type6, String resource7, String resource8, String resource9, String resource10, String resource11, String resource12, String type13, String timesss, String event, String score) {
         this.name = name;
         this.type1 = type1;
         this.type2 = type2;
@@ -41,6 +42,7 @@ public class Cp_immunity {
         this.type13 = type13;
         this.timesss = timesss;
         this.event = event;
+        this.score = score;
     }
 
 
@@ -182,6 +184,13 @@ public class Cp_immunity {
         this.event = event;
     }
 
+    public String getScore() {
+        return score;
+    }
+
+    public void setScore(String score) {
+        this.score = score;
+    }
     @Override
     public String toString() {
         return "Cp_immunity{" +
@@ -202,6 +211,7 @@ public class Cp_immunity {
                 ", type13='" + type13 + '\'' +
                 ", timesss='" + timesss + '\'' +
                 ", event='" + event + '\'' +
+                ", score='" + score + '\'' +
                 '}';
     }
 }

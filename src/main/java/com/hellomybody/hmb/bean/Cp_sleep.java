@@ -32,11 +32,14 @@ public class Cp_sleep {
     public String resource27;
     public String resource28;
     public String resource29;
+    private String timesss;
+    private String event;
+    private String score;
 
     public Cp_sleep() {
     }
 
-    public Cp_sleep(String name, String resource1, String resource2, String resource3, String resource4, String resource5, String resource6, String resource7, String resource8, String resource9, String resource10, String resource11, String resource12, String resource13, String resource14, String resource15, String resource16, String resource17, String resource18, String resource19, String resource20, String resource21, String resource22, String resource23, String resource24, String resource25, String resource26, String resource27, String resource28, String resource29) {
+    public Cp_sleep(String name, String resource1, String resource2, String resource3, String resource4, String resource5, String resource6, String resource7, String resource8, String resource9, String resource10, String resource11, String resource12, String resource13, String resource14, String resource15, String resource16, String resource17, String resource18, String resource19, String resource20, String resource21, String resource22, String resource23, String resource24, String resource25, String resource26, String resource27, String resource28, String resource29, String timesss, String event, String score) {
         this.name = name;
         this.resource1 = resource1;
         this.resource2 = resource2;
@@ -67,6 +70,9 @@ public class Cp_sleep {
         this.resource27 = resource27;
         this.resource28 = resource28;
         this.resource29 = resource29;
+        this.timesss = timesss;
+        this.event = event;
+        this.score = score;
     }
 
     public int getId() {
@@ -317,6 +323,30 @@ public class Cp_sleep {
         this.resource29 = resource29;
     }
 
+    public String getTimesss() {
+        return timesss;
+    }
+
+    public void setTimesss(String timesss) {
+        this.timesss = timesss;
+    }
+
+    public String getEvent() {
+        return event;
+    }
+
+    public void setEvent(String event) {
+        this.event = event;
+    }
+
+    public String getScore() {
+        return score;
+    }
+
+    public void setScore(String score) {
+        this.score = score;
+    }
+
     @Override
     public String toString() {
         return "Cp_sleep{" +
@@ -351,6 +381,9 @@ public class Cp_sleep {
                 ", resource27='" + resource27 + '\'' +
                 ", resource28='" + resource28 + '\'' +
                 ", resource29='" + resource29 + '\'' +
+                ", timesss='" + timesss + '\'' +
+                ", event='" + event + '\'' +
+                ", score='" + score + '\'' +
                 '}';
     }
 }

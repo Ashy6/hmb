@@ -11,7 +11,7 @@ public interface DaoFood {
     public Food getFoodByMassage(@Param("name") String name, @Param("alias") String alias);
 
     //    获取食品列表，  使用name和alias进行模糊查询                          pageStart记录每页的用户数量
-    public List<Food> getAllFood(@Param("name")String name,@Param("pageStarts") int PageStarts,@Param("pageSizes")int PageSizes);
+    public List<Food> getAllFood(@Param("name")String name, @Param("alias") String alias,@Param("pageStarts") int PageStarts,@Param("pageSizes")int PageSizes);
     //    获取所有的食品数据个数
     public int getFoodCounts(@Param("name") String name);
 
