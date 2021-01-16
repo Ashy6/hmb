@@ -36,14 +36,14 @@ public class Controller_cp_immunity {
 //    @ResponseBody
 //shopcode要与前端js中key对应
 //    public String addIm(@RequestParam("type1")String type1,@RequestParam("type2")String type2) {
-        // "form"前台传来的json对象数组
+////         "form"前台传来的json对象数组
 //        int i = dim.addMyl((com.hellomybody.hmb.bean.Cp_immunity) Cp_immunity);
 //        JSONArray picArray = JSONArray.parseArray(that.form.type1);
 //        List<String> codearr = new ArrayList<String>();
-//遍历得到单个的对象
+////遍历得到单个的对象
 //        for (int i = 0; i < picArray.size(); i++) {
 //            JSONObject jsonObject = picArray.getJSONObject(i);
-//把单个对象的参数往List中塞入
+////把单个对象的参数往List中塞入
 //            codearr.add((String) jsonObject.get("form"));
 //        }
 //        System.err.println(codearr);
