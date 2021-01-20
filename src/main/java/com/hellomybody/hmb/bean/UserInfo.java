@@ -10,11 +10,12 @@ public class UserInfo {
     private int height;
     private int weight;
     private int target;
+    private String timesss;
 
     public UserInfo() {
     }
 
-    public UserInfo(int id, String username, String sex, String birthday, String ages, int height, int weight, int target) {
+    public UserInfo(int id, String username, String sex, String birthday, String ages, int height, int weight, int target, String timesss) {
         this.id = id;
         this.username = username;
         this.sex = sex;
@@ -23,6 +24,7 @@ public class UserInfo {
         this.height = height;
         this.weight = weight;
         this.target = target;
+        this.timesss = timesss;
     }
 
     public int getId() {
@@ -89,6 +91,14 @@ public class UserInfo {
         this.target = target;
     }
 
+    public String getTimesss() {
+        return timesss;
+    }
+
+    public void setTimesss(String timesss) {
+        this.timesss = timesss;
+    }
+
     @Override
     public String toString() {
         return "UserInfo{" +
@@ -100,6 +110,7 @@ public class UserInfo {
                 ", height=" + height +
                 ", weight=" + weight +
                 ", target=" + target +
+                ", timesss=" + timesss +
                 '}';
     }
 }

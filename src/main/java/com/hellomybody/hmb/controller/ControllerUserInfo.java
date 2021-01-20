@@ -16,6 +16,7 @@ public class ControllerUserInfo {
     DaoUserInfo daoUserInfo;
 
     // 注册用户实现用户信息表中用户生成
+    // 同时也为添加用户信息的方法实现
     @RequestMapping("/addUserInfo")
     public String addUserInfo(@RequestBody UserInfo userInfo){
         int ui = daoUserInfo.addUserInfoName(userInfo);

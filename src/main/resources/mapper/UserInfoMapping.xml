@@ -6,11 +6,12 @@
     <!--查询用户信息-->
     <select id="getUserInfoMassage" resultType="com.hellomybody.hmb.bean.UserInfo">  <!--  resultType 为回的方法  -->
         SELECT * FROM userinfo WHERE
-        username=#{username}
+        username=#{username} AND id=(select MAX(id) from userinfo)
     </select>
     <!--增加用户表时，同时增加用户信息表里的username-->
     <insert id="addUserInfoName">
-        INSERT INTO userinfo (username) VALUE (#{username})
+        INSERT INTO userinfo (username,sex,birthday,ages,height,weight,target,timesss)
+        VALUE (#{username},#{sex},#{birthday},#{ages},#{height},#{weight},#{target},#{timesss})
     </insert>
 
     <!--    更新操作-->
