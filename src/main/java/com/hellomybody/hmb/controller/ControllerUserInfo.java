@@ -1,17 +1,12 @@
 package com.hellomybody.hmb.controller;
 
 import com.alibaba.fastjson.JSON;
-import com.hellomybody.hmb.bean.QueryInfo;
-import com.hellomybody.hmb.bean.User;
 import com.hellomybody.hmb.bean.UserInfo;
 import com.hellomybody.hmb.dao.DaoUserInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
-import javax.servlet.http.HttpSession;
-import java.util.Enumeration;
 import java.util.HashMap;
 import java.util.List;
 
@@ -19,6 +14,14 @@ import java.util.List;
 public class ControllerUserInfo {
     @Autowired    //自动注解daomenu，引入
     DaoUserInfo daoUserInfo;
+
+    // 注册用户实现用户信息表中用户生成
+    @RequestMapping("/addUserInfo")
+    public String addUserInfo(@RequestBody UserInfo userInfo){
+        int ui = daoUserInfo.addUserInfoName(userInfo);
+        return ui > 0 ? "success" : "error";
+    }
+
     //    查询的方法
     @RequestMapping("/findUserInfo")
     public String getUserInfoMassage(String username){

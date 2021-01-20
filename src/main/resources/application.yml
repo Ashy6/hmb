@@ -4,13 +4,16 @@ spring:
     #MySQL配置
     driverClassName: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://localhost:3306/hmb?useUnicode=true&characterEncoding=utf-8&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=GMT
+#    url: jdbc:mysql://39.107.244.76:3306/hmb?useUnicode=true&characterEncoding=utf-8&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=GMT
     username: root
+#    username: zjx
     password: 3721
   #mongo配置
   data:
     mongodb:
       database: zjxqa
       uri: mongodb://localhost:27017
+#      uri: mongodb://39.107.244.76:27017
 
 mybatis:
   #配置mybatis的映射文件

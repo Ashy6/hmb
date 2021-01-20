@@ -9,6 +9,8 @@ import java.util.List;
 @Repository
 //接口
 public interface DaoUserInfo {
+    // 注册用户时，同时添加用户信息表中的用户名
+    public int addUserInfoName(UserInfo userInfo);
     //查询用户的方法  添加注解@Param()用来找参数   用户名获取当前用户
     public UserInfo getUserInfoMassage(String username);
 

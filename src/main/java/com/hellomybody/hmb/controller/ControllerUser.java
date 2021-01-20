@@ -17,8 +17,8 @@ import java.util.List;
 public class ControllerUser {
     @Autowired
     private DaoUser duser;
-    @RequestMapping ("/allUser")
 
+    @RequestMapping ("/allUser")
 //    查询的方法
     public String getUserList(QueryInfo queryInfo){
         System.out.println("用户查询完毕");
@@ -82,7 +82,7 @@ public class ControllerUser {
         String string = JSON.toJSONString(user);
         return string;
     }
-//    修改  编辑用户信息
+    //  修改  编辑用户信息
     @RequestMapping("/editUser")
     public String editUser(@RequestBody User user){
         int i = duser.editUser(user);

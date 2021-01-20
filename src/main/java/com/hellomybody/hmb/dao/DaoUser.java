@@ -1,6 +1,7 @@
 package com.hellomybody.hmb.dao;
 
 import com.hellomybody.hmb.bean.User;
+import com.hellomybody.hmb.bean.UserInfo;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 

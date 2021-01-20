@@ -14,17 +14,13 @@
     <name>hmb</name>
     <description>Demo project for Spring Boot</description>
 
-
+    <!--jdk版本-->
     <properties>
         <java.version>1.8</java.version>
     </properties>
 
     <dependencies>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-jdbc</artifactId>
-        </dependency>
-<!--        web依赖-->
+        <!--web依赖-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
@@ -34,32 +30,41 @@
             <artifactId>mybatis-spring-boot-starter</artifactId>
             <version>2.1.3</version>
         </dependency>
-
+        <!--mysql依赖-->
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
             <scope>runtime</scope>
         </dependency>
-<!--        引入mongodb-->
+        <!--jdbc-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-jdbc</artifactId>
+        </dependency>
+        <!--引入NoSQL-mongodb-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-mongodb</artifactId>
         </dependency>
+        <!--mongo的运行依赖-->
         <dependency>
             <groupId>org.mongodb</groupId>
             <artifactId>mongodb-driver</artifactId>
+            <!--根据情况自己选择自己的maven依赖-->
+            <version>3.4.1</version>
         </dependency>
-        <!--        引入lombok-->
+        <!--引入lombok-->
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <optional>true</optional>
         </dependency>
-<!--        test-->
+        <!--test-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
+            <!--测试文件-->
             <exclusions>
                 <exclusion>
                     <groupId>org.junit.vintage</groupId>
@@ -67,7 +72,7 @@
                 </exclusion>
             </exclusions>
         </dependency>
-<!--        添加json依赖   前后端传值的时候用于转换-->
+        <!--添加json依赖   前后端传值的时候用于转换-->
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>fastjson</artifactId>
