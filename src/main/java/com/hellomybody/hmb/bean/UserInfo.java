@@ -6,6 +6,7 @@ public class UserInfo {
     private String username;
     private String sex;
     private String birthday;
+    private String ages;
     private int height;
     private int weight;
     private int target;
@@ -13,11 +14,12 @@ public class UserInfo {
     public UserInfo() {
     }
 
-    public UserInfo(int id, String username, String sex, String birthday, int height, int weight, int target) {
+    public UserInfo(int id, String username, String sex, String birthday, String ages, int height, int weight, int target) {
         this.id = id;
         this.username = username;
         this.sex = sex;
         this.birthday = birthday;
+        this.ages = ages;
         this.height = height;
         this.weight = weight;
         this.target = target;
@@ -55,6 +57,14 @@ public class UserInfo {
         this.birthday = birthday;
     }
 
+    public String getAges() {
+        return ages;
+    }
+
+    public void setAges(String ages) {
+        this.ages = ages;
+    }
+
     public int getHeight() {
         return height;
     }
@@ -86,6 +96,7 @@ public class UserInfo {
                 ", username='" + username + '\'' +
                 ", sex='" + sex + '\'' +
                 ", birthday='" + birthday + '\'' +
+                ", ages=" + ages +
                 ", height=" + height +
                 ", weight=" + weight +
                 ", target=" + target +
