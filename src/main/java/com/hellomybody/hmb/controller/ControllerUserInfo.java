@@ -1,6 +1,8 @@
 package com.hellomybody.hmb.controller;
 
 import com.alibaba.fastjson.JSON;
+import com.hellomybody.hmb.bean.QueryInfo;
+import com.hellomybody.hmb.bean.User;
 import com.hellomybody.hmb.bean.UserInfo;
 import com.hellomybody.hmb.dao.DaoUserInfo;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,7 +18,20 @@ import java.util.List;
 @RestController
 public class ControllerUserInfo {
     @Autowired    //自动注解daomenu，引入
-            DaoUserInfo daoUserInfo;
+    DaoUserInfo daoUserInfo;
+    //    查询的方法
+    @RequestMapping("/findUserInfo")
+    public String getUserInfoMassage(String username){
+        System.out.println("用户查询完毕");
+//        UserInfo user = daoUserInfo.getUserInfoMassage("zjs");
+        UserInfo user = daoUserInfo.getUserInfoMassage(username);
+//        获取查询信息和当前编号  存储到 numbers中
+//        UserInfo user = daoUserInfo.getUserInfoMassage( "%"+queryInfo.getQuery()+"%");
+        String res = JSON.toJSONString(user);
+        System.out.println(user);
+        return res;
+    }
+
     @RequestMapping("/userinfo")           //  放置路由地址
     public String getUserInfo(@RequestBody UserInfo userInfo){
 //        这里的数据使用一个哈希map，键是string，值是object

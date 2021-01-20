@@ -18,7 +18,7 @@ public interface DaoUser {
 
 //    修改功能，实现状态栏的开启或者关闭  根据主键id 来更改state值
     public int updateState(Integer id,Boolean state);
-//    添加功能
+//    添加功能+注册验证
     public int addUser(User user);
     public User getUserMassage(@Param("username") String username);
 //    删除
