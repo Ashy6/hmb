@@ -57,19 +57,8 @@ public class ServerMongoimpl implements serverMongo {
         Question mongodb = new Question();
 //        mongodb.setId(Id);
 //        MongoTemplate.findAll(new Question(new Criteria()),Question.class);
-        System.out.println(mongodao.findAll(Example.of(mongodb)));
+//        System.out.println(mongodao.findAll(Example.of(mongodb)));
         return mongodao.findAll(Example.of(mongodb));
-
-//        List<Question> q = mongodao.findAll(Example.of(mongodb));
-//        /*   创建hashmap  用于存放结果 */
-//        HashMap<String,Object> res = new HashMap<>();
-////        res.put("numbers",numbers);         //最大页
-//        res.put("data",q);              //结果
-////        创建json对象，将string类型的结果转码为json
-//        String ss;
-//        return ss = JSON.toJSONString(res);
-//        System.out.println(ss);
-//        return res;
     }
 //查询
 //    public List<Map<String,Object>> list(){

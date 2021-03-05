@@ -21,5 +21,6 @@ public class WebConfig extends WebMvcConfigurerAdapter {
                 .allowCredentials(true)
 //                设置最大响应时间
                 .maxAge(3600);
+//                .addResourceHandler("/static/**").addResourceLocations( "classpath:/static/");
     }
 }

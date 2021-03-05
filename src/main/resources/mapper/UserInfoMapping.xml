@@ -8,7 +8,27 @@
         SELECT * FROM userinfo WHERE
         username=#{username} AND id=(select MAX(id) from userinfo)
     </select>
-    <!--增加用户表时，同时增加用户信息表里的username-->
+
+    <!--查询用户身高体重记录的信息-->
+    <!--mysql的分页公式：limit #{第几页},{最大页}-->
+    <select id="getHWMessage" resultType="com.hellomybody.hmb.bean.UserInfo">  <!--  resultType 为回的方法  -->
+        SELECT * FROM userinfo WHERE
+        <if test="username !=null ">
+        username=#{username} AND timesss != "" order by id desc
+        </if>
+        LIMIT #{pageStart},#{pageSize}
+    </select>
+    <!--查询用户数据的数量-->
+    <select id="getUserHWCounts" resultType="java.lang.Integer">
+<!--        SELECT count(*) FROM `userinfo`-->
+<!--        <if test="timesss !=null ">-->
+<!--            WHERE username=#{username} AND timesss like #{timesss}-->
+<!--        </if>-->
+        select count(username=#{username} AND timesss != '' OR NULL) from `userinfo`
+        WHERE username like #{username}
+    </select>
+
+    <!--增加用户表时，同时增加用户信息表里的username   这个方法在添加用户信息时也被使用-->
     <insert id="addUserInfoName">
         INSERT INTO userinfo (username,sex,birthday,ages,height,weight,target,timesss)
         VALUE (#{username},#{sex},#{birthday},#{ages},#{height},#{weight},#{target},#{timesss})

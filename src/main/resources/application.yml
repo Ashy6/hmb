@@ -14,6 +14,8 @@ spring:
       database: zjxqa
       uri: mongodb://localhost:27017
 #      uri: mongodb://39.107.244.76:27017
+  mvc:
+    static-path-pattern: /static/**
 
 mybatis:
   #配置mybatis的映射文件

@@ -1,5 +1,6 @@
 package com.hellomybody.hmb.dao;
 
+import com.hellomybody.hmb.bean.User;
 import com.hellomybody.hmb.bean.UserInfo;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
@@ -11,11 +12,10 @@ import java.util.List;
 public interface DaoUserInfo {
     // 注册用户时，同时添加用户信息表中的用户名
     public int addUserInfoName(UserInfo userInfo);
-    //查询用户的方法  添加注解@Param()用来找参数   用户名获取当前用户
+    // 查询用户的方法 用户名获取当前用户
     public UserInfo getUserInfoMassage(String username);
+    // 查询用户的身高体重使用记录
+    public List<User> getHWMessage(@Param("username")String username, @Param("pageStart") int PageStart, @Param("pageSize")int PageSize);
+    public int getUserHWCounts(@Param("username")String username,@Param("timesss") String timesss);
 
-    //    修改功能，实现状态栏的开启或者关闭  根据主键id 来更改state值
-    public int updateUserInfo(String username,String sex,String birthday,int height,int weight,int target);
-    //    添加功能
-    public int addUserInfo(UserInfo userInfo);
 }
