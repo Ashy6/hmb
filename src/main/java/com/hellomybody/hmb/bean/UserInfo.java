@@ -7,15 +7,15 @@ public class UserInfo {
     private String sex;
     private String birthday;
     private String ages;
-    private int height;
-    private int weight;
-    private int target;
+    private String height;
+    private String weight;
+    private String target;
     private String timesss;
 
     public UserInfo() {
     }
 
-    public UserInfo(int id, String username, String sex, String birthday, String ages, int height, int weight, int target, String timesss) {
+    public UserInfo(int id, String username, String sex, String birthday, String ages, String height, String weight, String target, String timesss) {
         this.id = id;
         this.username = username;
         this.sex = sex;
@@ -67,27 +67,27 @@ public class UserInfo {
         this.ages = ages;
     }
 
-    public int getHeight() {
+    public String getHeight() {
         return height;
     }
 
-    public void setHeight(int height) {
+    public void setHeight(String height) {
         this.height = height;
     }
 
-    public int getWeight() {
+    public String getWeight() {
         return weight;
     }
 
-    public void setWeight(int weight) {
+    public void setWeight(String weight) {
         this.weight = weight;
     }
 
-    public int getTarget() {
+    public String getTarget() {
         return target;
     }
 
-    public void setTarget(int target) {
+    public void setTarget(String target) {
         this.target = target;
     }
 
