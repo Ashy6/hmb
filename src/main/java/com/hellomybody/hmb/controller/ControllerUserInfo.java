@@ -17,23 +17,30 @@ public class ControllerUserInfo {
     @Autowired    //自动注解daomenu，引入
     DaoUserInfo daoUserInfo;
 
-    // 注册用户实现用户信息表中用户生成
-    // 同时也为添加用户信息的方法实现
+    // 用户添加信息
     @RequestMapping("/addUserInfo")
     public String addUserInfo(@RequestBody UserInfo userInfo){
+        // 这里解释一下，前端需要一个默认的生日，因为watch动态监听了用户birthday
         int ui = daoUserInfo.addUserInfoName(userInfo);
         return ui > 0 ? "success" : "error";
     }
-
+    // 注册用户实现用户信息表中用户生成
+    // 同时也为添加用户信息的方法实现
+    @RequestMapping("/addUserInfoName")
+    public String addUserInfoName(@RequestBody UserInfo userInfo){
+        // 这里解释一下，前端需要一个默认的生日，因为watch动态监听了用户birthday
+        userInfo.setBirthday("2000-01-01");
+        int ui = daoUserInfo.addUserInfoNameB(userInfo);
+        return ui > 0 ? "success" : "error";
+    }
     //    查询用户信息的方法
     @RequestMapping("/findUserInfo")
     public String getUserInfoMassage(String username){
-    //        System.out.println("用户查询完毕");
         UserInfo user = daoUserInfo.getUserInfoMassage(username);
     //        获取查询信息和当前编号  存储到 numbers中
-    //        UserInfo user = daoUserInfo.getUserInfoMassage( "%"+queryInfo.getQuery()+"%");
+//            UserInfo user = daoUserInfo.getUserInfoMassage( "%"+queryInfo.getQuery()+"%");
         String res = JSON.toJSONString(user);
-    //        System.out.println(user);
+//            System.out.println(res);
         return res;
     }
     //    查询用户身高体重历史的方法
@@ -52,7 +59,7 @@ public class ControllerUserInfo {
         res.put("numbers",numbers);         //最大页
         res.put("data",users);              //结果
         String hw = JSON.toJSONString(res);
-        System.out.println(hw);
+//        System.out.println(hw);
         return hw;
     }
 }

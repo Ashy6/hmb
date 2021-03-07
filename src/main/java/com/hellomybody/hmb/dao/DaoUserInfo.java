@@ -12,6 +12,7 @@ import java.util.List;
 public interface DaoUserInfo {
     // 注册用户时，同时添加用户信息表中的用户名
     public int addUserInfoName(UserInfo userInfo);
+    public int addUserInfoNameB(UserInfo userInfo);
     // 查询用户的方法 用户名获取当前用户
     public UserInfo getUserInfoMassage(String username);
     // 查询用户的身高体重使用记录
