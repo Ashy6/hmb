@@ -8,7 +8,7 @@ import java.util.List;
 @Repository
 public interface DaoFood {
     //    添加注解@Param()用来找参数     可以根据食物名和别名获取当前所有食物
-//    public Food getFoodByMassage(@Param("name") String name, @Param("alias") String alias);
+    public Food getFoodByMassage(@Param("name") String name, @Param("alias") String alias);
 
     //    获取食品列表，  使用name和alias进行模糊查询                          pageStart记录每页的用户数量
     public List<Food> getAllFood(@Param("name")String name, @Param("alias") String alias,@Param("pageStarts") int PageStarts,@Param("pageSizes")int PageSizes);

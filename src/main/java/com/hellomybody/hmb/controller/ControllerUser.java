@@ -45,6 +45,13 @@ public class ControllerUser {
         String str = i >0?"success":"error";
         return str;
     }
+    // 用户自己---修改用户状态
+    @RequestMapping("/userStatename")
+    public String updateUserStatename(@RequestParam("username")String username,@RequestParam("state") Boolean state){
+        int i = duser.updateStateName(username, state);
+        String str = i >0?"success":"error";
+        return str;
+    }
 
 //    增加的方法     添加用户
     @RequestMapping("/addUser")

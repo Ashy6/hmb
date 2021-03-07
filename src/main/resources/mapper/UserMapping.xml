@@ -34,10 +34,13 @@
     </select>
 
 <!--    更新操作-->
+    <!--    根据主键id修改state值-->
     <update id="updateState">
         UPDATE user SET state = #{state} WHERE id = #{id}
     </update>
-<!--    根据主键id修改state值-->
+    <update id="updateStateName">
+        UPDATE user SET state = #{state} WHERE username = #{username}
+    </update>
 
 <!--    增加-->
     <insert id="addUser">
