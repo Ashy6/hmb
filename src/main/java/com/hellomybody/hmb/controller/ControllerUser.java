@@ -34,7 +34,7 @@ public class ControllerUser {
         res.put("data",users);              //结果
 //        创建json对象，将string类型的结果转码为json
         String ss = JSON.toJSONString(res);
-        System.out.println(ss);
+//        System.out.println(ss);
         return ss;
     }
 
@@ -75,6 +75,11 @@ public class ControllerUser {
         int i = duser.deleteUser(id);
         return i > 0 ? "success":"error";
     }
+    @RequestMapping("/deleteUsername")
+    public String deleteUser(String username){
+        int i = duser.deleteUsername(username);
+        return i > 0 ? "success":"error";
+    }
 //    更新用户      获取修改信息
     @RequestMapping("/getupdate")
     public String getUpdateUser(int id){
@@ -87,6 +92,13 @@ public class ControllerUser {
     public String editUser(@RequestBody User user){
         int i = duser.editUser(user);
         return i > 0 ? "success":"error";
+    }
+    //   用户的更改    获取修改信息
+    @RequestMapping("/getUpdateUser")
+    public String getUpdateUser(String username){
+        User user = duser.getUpdateUsername(username);
+        String string = JSON.toJSONString(user);
+        return string;
     }
 }
 

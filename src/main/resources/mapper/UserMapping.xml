@@ -47,9 +47,15 @@
     <delete id="deleteUser">
         DELETE FROM user WHERE id = #{id}
     </delete>
+    <delete id="deleteUsername">
+        DELETE FROM user WHERE username = #{username}
+    </delete>
 <!--    修改用户-->
     <select id="getUpdateUser" resultType="com.hellomybody.hmb.bean.User">
         SELECT * FROM user WHERE id = #{id}
+    </select>
+    <select id="getUpdateUsername" resultType="com.hellomybody.hmb.bean.User">
+        SELECT * FROM user WHERE username = #{username}
     </select>
     <update id="editUser">
         UPDATE user SET username = #{username} , password = #{password} , email = #{email} WHERE  id = #{id}

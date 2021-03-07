@@ -24,8 +24,10 @@ public interface DaoUser {
     public User getUserMassage(@Param("username") String username);
 //    删除
     public int deleteUser(int id);
+    public int deleteUsername(String username);
 //    修改用户
     public User getUpdateUser(int id);
     public int editUser(User user);
-
+// 用户修改自己的信息
+    public User getUpdateUsername(String username);
 }
