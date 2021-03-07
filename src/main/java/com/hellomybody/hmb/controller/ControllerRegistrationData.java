@@ -16,7 +16,6 @@ public class ControllerRegistrationData {
     public String getFirstTimeLogin(String username){
         Registration_date user = daoRegistration.getFirstTimeLogin(username);
         String re = JSON.toJSONString(user);
-        System.out.println("第一次登陆时间为："+re);
         return re;
     }
 }
