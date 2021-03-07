@@ -13,7 +13,7 @@ import java.util.List;
 @RestController
 public class ControllerMenu {
     @Autowired    //自动注解daomenu，引入
-    DaoMenu daoMenu;
+    private DaoMenu daoMenu;
     @RequestMapping("/menus")           //  放置路由地址
     public String getAllMenus(){
 //        这里的数据使用一个哈希map，键是string，值是object

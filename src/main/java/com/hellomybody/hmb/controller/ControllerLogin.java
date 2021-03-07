@@ -13,7 +13,7 @@ import java.util.HashMap;
 @RestController  //该注解规定所有的controller都是string类型
 public class ControllerLogin {
     @Autowired  //该注解将Daouser注入到controllerLogin中
-        DaoUser daoUser;
+    private DaoUser daoUser;
     @RequestMapping("/login")    //该注解创建访问路径
     public String login(@RequestBody User user) {  //Req注解让其可以找到参数user
         User u = daoUser.getUserByMassage(user.getUsername(),user.getPassword());

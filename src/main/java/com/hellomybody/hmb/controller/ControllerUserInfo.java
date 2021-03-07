@@ -15,7 +15,7 @@ import java.util.List;
 @RestController
 public class ControllerUserInfo {
     @Autowired    //自动注解daomenu，引入
-    DaoUserInfo daoUserInfo;
+    private DaoUserInfo daoUserInfo;
 
     // 用户添加信息
     @RequestMapping("/addUserInfo")
@@ -51,7 +51,7 @@ public class ControllerUserInfo {
     //        获取查询信息和当前编号  存储到 numbers中
         int numbers = daoUserInfo.getUserHWCounts("%"+queryInfo.getQuery()+"%","%"+queryInfo.getQuery()+"%");
         System.out.println(numbers);
-    //        开始页面=（当前页的编号-1）*每页最大数
+        //        开始页面=（当前页的编号-1）*每页最大数
         int pageStart = (queryInfo.getPageNum() - 1) *queryInfo.getPageSize();
         List<User> users = daoUserInfo.getHWMessage( username,pageStart,queryInfo.getPageSize());
         /*   创建hashmap  用于存放结果 */

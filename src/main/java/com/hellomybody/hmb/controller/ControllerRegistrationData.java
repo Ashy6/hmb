@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class ControllerRegistrationData {
     @Autowired    //自动注解daomenu，引入
-            DaoRegistration daoRegistration;
+    private DaoRegistration daoRegistration;
     //    查询用户 -- 第一次注册的时间
     @RequestMapping("/findFirstTimeLogin")
     public String getFirstTimeLogin(String username){

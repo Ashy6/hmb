@@ -12,7 +12,7 @@ import java.util.List;
 @RestController
 public class ControllerM_User {
     @Autowired    //自动注解daomenu，引入
-            Dao_U_Menu dao_u_menu;
+    private Dao_U_Menu dao_u_menu;
     @RequestMapping("/usermenus")           //  放置路由地址
     public String getuserAllMenus(){
         System.out.println("用户功能加载完毕");
