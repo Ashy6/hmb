@@ -7,7 +7,7 @@
     <select id="getUserInfoMassage" resultType="com.hellomybody.hmb.bean.UserInfo">  <!--  resultType 为回的方法  -->
         SELECT * FROM userinfo WHERE
         <if test="username !=null ">
-        username=#{username} AND id in (SELECT max(id) FROM userinfo GROUP BY username) ORDER BY username DESC
+        username=#{username} AND id in (SELECT max(id) FROM userinfo GROUP BY username) ORDER BY id DESC
         </if>
     </select>
 
