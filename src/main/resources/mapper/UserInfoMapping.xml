@@ -40,13 +40,4 @@
     <update id="updateUserInfo">
         UPDATE userinfo SET sex=#{sex} WHERE username = #{username}
     </update>
-<!--    username;-->
-<!--    sex;-->
-<!--    birthday;-->
-<!--    height;-->
-<!--    weight;-->
-<!--    target;-->
-    <insert id="addUserInfo">
-        INSERT INTO userinfo (sex,birthdayd,height,weight,target) VALUE (#{sex},#{birthday},#{height},#{weight},#{target})
-    </insert>
 </mapper>
