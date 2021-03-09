@@ -17,6 +17,9 @@ public interface DaoUserInfo {
     public UserInfo getUserInfoMassage(String username);
     // 查询用户的身高体重使用记录
     public List<User> getHWMessage(@Param("username")String username, @Param("pageStart") int PageStart, @Param("pageSize")int PageSize);
-    public int getUserHWCounts(@Param("username")String username,@Param("timesss") String timesss);
+    public List<User> findInfoList(@Param("username")String username);
+    public int getUserHWCounts(@Param("username")String username);
+    public int getInfoListCounts(@Param("username")String username);
+    public int deleteInfo(int id);
 
 }

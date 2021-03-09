@@ -37,20 +37,14 @@ public class ControllerUserInfo {
     @RequestMapping("/findUserInfo")
     public String getUserInfoMassage(String username){
         UserInfo user = daoUserInfo.getUserInfoMassage(username);
-    //        获取查询信息和当前编号  存储到 numbers中
-//            UserInfo user = daoUserInfo.getUserInfoMassage( "%"+queryInfo.getQuery()+"%");
         String res = JSON.toJSONString(user);
-//            System.out.println(res);
         return res;
     }
-    //    查询用户身高体重历史的方法
+    //    查询用户身高体重历史的方法  --  10条（分页没做）
     @RequestMapping("/findHWInfo")
     //    加载分页模型
     public String getUserHWList(QueryInfo queryInfo,String username){
-        System.out.println("用户记录查询完毕");
-    //        获取查询信息和当前编号  存储到 numbers中
-        int numbers = daoUserInfo.getUserHWCounts("%"+queryInfo.getQuery()+"%","%"+queryInfo.getQuery()+"%");
-        System.out.println(numbers);
+        int numbers = daoUserInfo.getUserHWCounts(username);
         //        开始页面=（当前页的编号-1）*每页最大数
         int pageStart = (queryInfo.getPageNum() - 1) *queryInfo.getPageSize();
         List<User> users = daoUserInfo.getHWMessage( username,pageStart,queryInfo.getPageSize());
@@ -59,7 +53,26 @@ public class ControllerUserInfo {
         res.put("numbers",numbers);         //最大页
         res.put("data",users);              //结果
         String hw = JSON.toJSONString(res);
-//        System.out.println(hw);
         return hw;
+    }
+    //    查询用体脂历史
+    @RequestMapping("/findInfoList")
+    //    加载分页模型
+    public String findInfoList(String username){
+        System.out.println("用户记录查询完毕");
+        int numbers = daoUserInfo.getInfoListCounts(username);
+        List<User> users = daoUserInfo.findInfoList( username);
+        /*   创建hashmap  用于存放结果 */
+        HashMap<String,Object> res = new HashMap<>();
+        res.put("numbers",numbers);
+        res.put("data",users);              //结果
+        String bmi = JSON.toJSONString(res);
+        return bmi;
+    }
+    //    删除的方法
+    @RequestMapping("/deleteInfo")
+    public String deleteInfo(int id){
+        int i = daoUserInfo.deleteInfo(id);
+        return i > 0 ? "success":"error";
     }
 }

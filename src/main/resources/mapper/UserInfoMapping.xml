@@ -40,4 +40,18 @@
     <update id="updateUserInfo">
         UPDATE userinfo SET sex=#{sex} WHERE username = #{username}
     </update>
+    <!--查询用户体脂记录  不显示第一条记录（注册时间）-->
+    <select id="findInfoList" resultType="com.hellomybody.hmb.bean.UserInfo">
+        select id,weight,bmi,bfat,timesss
+        from userinfo
+        where username=#{username} and id not in (select min(id) from userinfo where username=#{username})
+    </select>
+    <delete id="deleteInfo">
+        DELETE FROM userinfo WHERE id = #{id}
+    </delete>
+    <!--查询体脂记录数量-->
+    <select id="getInfoListCounts" resultType="java.lang.Integer">
+        select count(username=#{username} OR NULL) from userinfo
+        WHERE username like #{username}
+    </select>
 </mapper>
