@@ -32,8 +32,8 @@
         VALUE (#{username},#{birthday})
     </insert>
     <insert id="addUserInfoName">
-        INSERT INTO userinfo (username,sex,birthday,ages,height,weight,target,timesss)
-        VALUE (#{username},#{sex},#{birthday},#{ages},#{height},#{weight},#{target},#{timesss})
+        INSERT INTO userinfo (username,sex,birthday,ages,height,weight,target,bmi,bfat,timesss)
+        VALUE (#{username},#{sex},#{birthday},#{ages},#{height},#{weight},#{target},#{bmi},#{bfat},#{timesss})
     </insert>
 
     <!--    更新操作-->

@@ -10,13 +10,14 @@ public class UserInfo {
     private String height;
     private String weight;
     private String target;
+    private String bmi ;
+    private String bfat ;
     private String timesss;
 
     public UserInfo() {
     }
 
-    public UserInfo(int id, String username, String sex, String birthday, String ages, String height, String weight, String target, String timesss) {
-        this.id = id;
+    public UserInfo(String username, String sex, String birthday, String ages, String height, String weight, String target, String bmi, String bfat, String timesss) {
         this.username = username;
         this.sex = sex;
         this.birthday = birthday;
@@ -24,6 +25,8 @@ public class UserInfo {
         this.height = height;
         this.weight = weight;
         this.target = target;
+        this.bmi = bmi;
+        this.bfat = bfat;
         this.timesss = timesss;
     }
 
@@ -91,6 +94,22 @@ public class UserInfo {
         this.target = target;
     }
 
+    public String getBmi() {
+        return bmi;
+    }
+
+    public void setBmi(String bmi) {
+        this.bmi = bmi;
+    }
+
+    public String getBfat() {
+        return bfat;
+    }
+
+    public void setBfat(String bfat) {
+        this.bfat = bfat;
+    }
+
     public String getTimesss() {
         return timesss;
     }
@@ -110,6 +129,8 @@ public class UserInfo {
                 ", height=" + height +
                 ", weight=" + weight +
                 ", target=" + target +
+                ", bmi=" + bmi +
+                ", bfat=" + bfat +
                 ", timesss=" + timesss +
                 '}';
     }
