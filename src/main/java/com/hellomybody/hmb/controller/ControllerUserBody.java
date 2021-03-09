@@ -30,17 +30,14 @@ public class ControllerUserBody {
     public String getUserBodyMassage(String username){
         UserBody user = daoub.getUserBodyMassage(username);
         String res = JSON.toJSONString(user);
-//            System.out.println(res);
         return res;
     }
 
     //    查询全部历史记录
     @RequestMapping("/findBodyList")
-    public String getUserHWList(QueryInfo queryInfo, String username){
+    public String getUserHWList(String username){
         //        获取查询信息和当前编号  存储到 numbers中
-        int numbers = daoub.getUserBDCounts("%"+queryInfo.getQuery()+"%");
-        System.out.println("用户身体记录数目"+numbers);
-        int pageStart = (queryInfo.getPageNum() - 1) *queryInfo.getPageSize();
+        int numbers = daoub.getUserBDCounts(username);
         List<UserBody> users = daoub.getBDMessage( username);
         /*   创建hashmap  用于存放结果 */
         HashMap<String,Object> res = new HashMap<>();
