@@ -13,11 +13,7 @@
     <!--查询用户身高体重记录的信息-->
     <!--mysql的分页公式：limit #{第几页},{最大页}-->
     <select id="getBDMessage" resultType="com.hellomybody.hmb.bean.UserBody">  <!--  resultType 为回的方法  -->
-        SELECT * FROM ubody WHERE
-        <if test="username !=null ">
-        username=#{username} order by id desc
-        </if>
-        LIMIT #{pageStart},#{pageSize}
+        SELECT * FROM ubody WHERE username=#{username}
     </select>
     <!--查询用户数据的数量-->
     <select id="getUserBDCounts" resultType="java.lang.Integer">
@@ -32,5 +28,8 @@
         #{vision},#{hipline},#{chest},#{waistline},#{tooth},#{legspeed},
         #{grip},#{heart},#{times})
     </insert>
+    <delete id="deleteRecord">
+        DELETE FROM ubody WHERE id = #{id}
+    </delete>
 
 </mapper>
