@@ -27,11 +27,11 @@
     </select>
 
     <!--增加用户表时，同时增加用户信息表里的username   这个方法在添加用户信息时也被使用-->
-    <insert id="addUserInfoNameB">
-        INSERT INTO userinfo (username,birthday)
-        VALUE (#{username},#{birthday})
-    </insert>
     <insert id="addUserInfoName">
+        INSERT INTO userinfo (username,birthday,timesss)
+        VALUE (#{username},#{birthday},#{timesss})
+    </insert>
+    <insert id="addUserInfo">
         INSERT INTO userinfo (username,sex,birthday,ages,height,weight,target,bmi,bfat,timesss)
         VALUE (#{username},#{sex},#{birthday},#{ages},#{height},#{weight},#{target},#{bmi},#{bfat},#{timesss})
     </insert>

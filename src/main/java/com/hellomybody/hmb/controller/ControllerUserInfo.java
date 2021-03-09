@@ -21,7 +21,7 @@ public class ControllerUserInfo {
     @RequestMapping("/addUserInfo")
     public String addUserInfo(@RequestBody UserInfo userInfo){
         // 这里解释一下，前端需要一个默认的生日，因为watch动态监听了用户birthday
-        int ui = daoUserInfo.addUserInfoName(userInfo);
+        int ui = daoUserInfo.addUserInfo(userInfo);
         return ui > 0 ? "success" : "error";
     }
     // 注册用户实现用户信息表中用户生成
@@ -30,7 +30,7 @@ public class ControllerUserInfo {
     public String addUserInfoName(@RequestBody UserInfo userInfo){
         // 这里解释一下，前端需要一个默认的生日，因为watch动态监听了用户birthday
         userInfo.setBirthday("2000-01-01");
-        int ui = daoUserInfo.addUserInfoNameB(userInfo);
+        int ui = daoUserInfo.addUserInfoName(userInfo);
         return ui > 0 ? "success" : "error";
     }
     //    查询用户信息的方法
