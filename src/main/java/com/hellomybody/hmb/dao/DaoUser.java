@@ -1,7 +1,6 @@
 package com.hellomybody.hmb.dao;
 
 import com.hellomybody.hmb.bean.User;
-import com.hellomybody.hmb.bean.UserInfo;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
@@ -16,13 +15,13 @@ public interface DaoUser {
     public List<User> getAllUser(@Param("username")String username,@Param("pageStart") int PageStart,@Param("pageSize")int PageSize);
 //    获取所有的用户个数
     public int getUserCounts(@Param("username") String username);
-
 //    修改功能，实现状态栏的开启或者关闭  根据主键id 来更改state值
     public int updateState(Integer id,Boolean state);
     public int updateStateName(String username,Boolean state);
 //    添加功能+注册验证
     public int addUser(User user);
     public User getUserMassage(@Param("username") String username);
+    public User getUserID(@Param("username") String username);
 //    删除
     public int deleteUser(int id);
     public int deleteUsername(String username);

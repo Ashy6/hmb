@@ -3,20 +3,18 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <!--mapper的命名空间: 规定指定mybatis的映射xml文件-->
 <mapper namespace="com.hellomybody.hmb.dao.DaoUser">
-<!--    实现方法-->
 <!--    用户登录查询 用户名和密码 以及开启状态-->
     <select id="getUserByMassage" resultType="com.hellomybody.hmb.bean.User">  <!--  resultType 为回的方法  -->
         SELECT * FROM user WHERE
         username=#{username} AND password=#{password} AND state = 1
     </select>
 <!--    此处进行注册验证 -  验证是否已注册-->
-    <select id="getUserMassage" resultType="com.hellomybody.hmb.bean.User">  <!--  resultType 为回的方法  -->
-        SELECT * FROM user WHERE
+    <select id="getUserID" resultType="com.hellomybody.hmb.bean.User">  <!--  resultType 为回的方法  -->
+        SELECT id FROM user WHERE
         username=#{username}
     </select>
-
-<!--      结合了模糊查询和IN查询-->
-<!--    用户列表查询            模糊查询username   -->
+<!--    结合了模糊查询和IN查询-->
+<!--    用户列表查询  模糊查询username   -->
 <!--    mysql的分页公式：limit #{第几页},{最大页}-->
     <select id="getAllUser" resultType="com.hellomybody.hmb.bean.User">
         SELECT * FROM user
@@ -32,7 +30,6 @@
             WHERE username like #{username}
         </if>
     </select>
-
 <!--    更新操作-->
     <!--    根据主键id修改state值-->
     <update id="updateState">
@@ -41,7 +38,6 @@
     <update id="updateStateName">
         UPDATE user SET state = #{state} WHERE username = #{username}
     </update>
-
 <!--    增加-->
     <insert id="addUser">
         INSERT INTO user (username,password,email,role,state) VALUE (#{username},#{password},#{email},#{role},#{state})
