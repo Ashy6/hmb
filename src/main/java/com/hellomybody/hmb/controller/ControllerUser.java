@@ -3,7 +3,6 @@ package com.hellomybody.hmb.controller;
 import com.alibaba.fastjson.JSON;
 import com.hellomybody.hmb.bean.QueryInfo;
 import com.hellomybody.hmb.bean.User;
-import com.hellomybody.hmb.bean.UserInfo;
 import com.hellomybody.hmb.dao.DaoUser;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;

@@ -3,19 +3,24 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <!--mapper的命名空间: 规定指定mybatis的映射xml文件-->
 <mapper namespace="com.hellomybody.hmb.dao.DaoUser">
-<!--    用户登录查询 用户名和密码 以及开启状态-->
+    <!--用户登录查询 用户名和密码 以及开启状态-->
     <select id="getUserByMassage" resultType="com.hellomybody.hmb.bean.User">  <!--  resultType 为回的方法  -->
         SELECT * FROM user WHERE
         username=#{username} AND password=#{password} AND state = 1
     </select>
-<!--    此处进行注册验证 -  验证是否已注册-->
+    <!--此处进行注册验证 -  验证是否已注册-->
+    <select id="getUserMassage" resultType="com.hellomybody.hmb.bean.User">  <!--  resultType 为回的方法  -->
+        SELECT * FROM user WHERE
+        username=#{username}
+    </select>
+    <!--查询ID-->
     <select id="getUserID" resultType="com.hellomybody.hmb.bean.User">  <!--  resultType 为回的方法  -->
         SELECT id FROM user WHERE
         username=#{username}
     </select>
-<!--    结合了模糊查询和IN查询-->
-<!--    用户列表查询  模糊查询username   -->
-<!--    mysql的分页公式：limit #{第几页},{最大页}-->
+    <!--结合了模糊查询和IN查询-->
+    <!--用户列表查询  模糊查询username   -->
+    <!--mysql的分页公式：limit #{第几页},{最大页}-->
     <select id="getAllUser" resultType="com.hellomybody.hmb.bean.User">
         SELECT * FROM user
         <if test="username !=null ">
@@ -23,14 +28,14 @@
         </if>
         LIMIT #{pageStart},#{pageSize}
     </select>
-<!--    查询用户数量-->
+    <!--查询用户数量-->
     <select id="getUserCounts" resultType="java.lang.Integer">
         SELECT count(*) FROM `user`
         <if test="username !=null ">
             WHERE username like #{username}
         </if>
     </select>
-<!--    更新操作-->
+    <!--更新操作-->
     <!--    根据主键id修改state值-->
     <update id="updateState">
         UPDATE user SET state = #{state} WHERE id = #{id}
@@ -38,18 +43,18 @@
     <update id="updateStateName">
         UPDATE user SET state = #{state} WHERE username = #{username}
     </update>
-<!--    增加-->
+    <!--增加-->
     <insert id="addUser">
         INSERT INTO user (username,password,email,role,state) VALUE (#{username},#{password},#{email},#{role},#{state})
     </insert>
-<!--    删除用户-->
+    <!--删除用户-->
     <delete id="deleteUser">
         DELETE FROM user WHERE id = #{id}
     </delete>
     <delete id="deleteUsername">
         DELETE FROM user WHERE username = #{username}
     </delete>
-<!--    修改用户-->
+    <!--修改用户-->
     <select id="getUpdateUser" resultType="com.hellomybody.hmb.bean.User">
         SELECT * FROM user WHERE id = #{id}
     </select>
